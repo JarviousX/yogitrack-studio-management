@@ -52,7 +52,9 @@ app.get('/api/health', (req, res) => {
     message: 'YogiTrack API is running',
     timestamp: new Date().toISOString(),
     database: mongoose.connection.readyState === 1 ? 'connected' : 'disconnected',
-    mongodb_uri: process.env.MONGODB_URI ? 'Set' : 'Not set'
+    mongodb_uri: process.env.MONGODB_URI ? 'Set' : 'Not set',
+    connection_state: mongoose.connection.readyState,
+    env_vars: Object.keys(process.env).filter(key => key.includes('MONGO'))
   });
 });
 
@@ -71,6 +73,34 @@ app.get('/api/test-db', async (req, res) => {
     res.json({
       success: false,
       message: 'Database connection failed',
+      error: error.message,
+      connectionState: mongoose.connection.readyState
+    });
+  }
+});
+
+// Manual connection test endpoint
+app.get('/api/connect-db', async (req, res) => {
+  try {
+    const mongoURI = process.env.MONGODB_URI || 'mongodb+srv://jackson24le_db_user:NKyPanxvAVPYnox9@yogitrack.4cr0alt.mongodb.net/yogitrack?retryWrites=true&w=majority&appName=YogiTrack';
+    
+    console.log('Attempting manual connection...');
+    console.log('URI exists:', !!process.env.MONGODB_URI);
+    
+    await mongoose.connect(mongoURI, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
+    
+    res.json({
+      success: true,
+      message: 'Manual connection successful',
+      connectionState: mongoose.connection.readyState
+    });
+  } catch (error) {
+    res.json({
+      success: false,
+      message: 'Manual connection failed',
       error: error.message,
       connectionState: mongoose.connection.readyState
     });
