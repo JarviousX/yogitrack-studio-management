@@ -592,7 +592,7 @@ function handleEditInstructor(button) {
 // Edit instructor from table
 async function handleEditInstructor(instructorId) {
     try {
-        const response = await fetch(`http://localhost:5000/api/instructors/${instructorId}`);
+        const response = await fetch(`/api/instructors/${instructorId}`);
         if (!response.ok) {
             throw new Error('Failed to fetch instructor details');
         }
@@ -666,7 +666,7 @@ async function handleDeleteInstructor(instructorId) {
     }
     
     try {
-        const response = await fetch(`http://localhost:5000/api/instructors/${instructorId}`, {
+        const response = await fetch(`/api/instructors/${instructorId}`, {
             method: 'DELETE'
         });
         
@@ -697,7 +697,7 @@ function handleViewInstructor(button) {
 // View instructor details from table
 async function handleViewInstructorDetails(instructorId) {
     try {
-        const response = await fetch(`http://localhost:5000/api/instructors/${instructorId}`);
+        const response = await fetch(`/api/instructors/${instructorId}`);
         if (!response.ok) {
             throw new Error('Failed to fetch instructor details');
         }
@@ -851,7 +851,7 @@ async function toggleInstructorStatus(instructorId, currentStatus) {
     const newStatus = currentStatus === 'active' ? 'inactive' : 'active';
     
     try {
-        const response = await fetch(`http://localhost:5000/api/instructors/${instructorId}/status`, {
+        const response = await fetch(`/api/instructors/${instructorId}/status`, {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json',
@@ -1032,7 +1032,7 @@ async function handleInstructorFormSubmit(e) {
 // Real API call to backend
 async function saveInstructorToAPI(data) {
     try {
-        const response = await fetch('http://localhost:5000/api/instructors', {
+        const response = await fetch('/api/instructors', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -1063,7 +1063,7 @@ async function saveInstructorToAPI(data) {
 // Update instructor API call
 async function updateInstructorToAPI(instructorId, data) {
     try {
-        const response = await fetch(`http://localhost:5000/api/instructors/${instructorId}`, {
+        const response = await fetch(`/api/instructors/${instructorId}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
@@ -1094,7 +1094,7 @@ async function updateInstructorToAPI(instructorId, data) {
 // Load instructors from API
 async function loadInstructorsFromAPI() {
     try {
-        const response = await fetch('http://localhost:5000/api/instructors');
+        const response = await fetch('/api/instructors');
         if (response.ok) {
             const instructors = await response.json();
             console.log('Loaded instructors from API:', instructors);
@@ -1233,7 +1233,7 @@ async function updateInstructorStats(instructors) {
 // Get classes this week from the classes API
 async function getClassesThisWeek() {
     try {
-        const response = await fetch('http://localhost:5000/api/classes');
+        const response = await fetch('/api/classes');
         if (response.ok) {
             const classes = await response.json();
             
@@ -1306,7 +1306,7 @@ function calculateMonthlyPayroll(instructors) {
 // Load classes from API
 async function loadClassesFromAPI() {
     try {
-        const response = await fetch('http://localhost:5000/api/classes/schedule');
+        const response = await fetch('/api/classes/schedule');
         if (response.ok) {
             const schedule = await response.json();
             console.log('Loaded classes from API:', schedule);
@@ -1445,7 +1445,7 @@ async function loadClasses() {
 // Render class list view
 async function renderClassListView() {
     try {
-        const response = await fetch('http://localhost:5000/api/classes');
+        const response = await fetch('/api/classes');
         if (!response.ok) {
             throw new Error('Failed to fetch classes');
         }
@@ -1698,7 +1698,7 @@ async function handleClassFormSubmit(e) {
 // Save class to API
 async function saveClassToAPI(data) {
     try {
-        const response = await fetch('http://localhost:5000/api/classes', {
+        const response = await fetch('/api/classes', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -1745,7 +1745,7 @@ async function deleteClass(classId) {
     }
     
     try {
-        const response = await fetch(`http://localhost:5000/api/classes/${classId}`, {
+        const response = await fetch(`/api/classes/${classId}`, {
             method: 'DELETE'
         });
         
@@ -1874,7 +1874,7 @@ function closePackageModal() {
 // Load packages from API
 async function loadPackagesFromAPI() {
     try {
-        const response = await fetch('http://localhost:5000/api/packages');
+        const response = await fetch('/api/packages');
         if (!response.ok) {
             throw new Error('Failed to fetch packages');
         }
@@ -2208,7 +2208,7 @@ async function handlePackageFormSubmit(e) {
 
 async function savePackageToAPI(data) {
     try {
-        const response = await fetch('http://localhost:5000/api/packages', {
+        const response = await fetch('/api/packages', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -2238,7 +2238,7 @@ async function savePackageToAPI(data) {
 
 async function updatePackageToAPI(packageId, data) {
     try {
-        const response = await fetch(`http://localhost:5000/api/packages/${packageId}`, {
+        const response = await fetch(`/api/packages/${packageId}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
@@ -2269,7 +2269,7 @@ async function updatePackageToAPI(packageId, data) {
 // View package details
 async function handleViewPackageDetails(packageId) {
     try {
-        const response = await fetch(`http://localhost:5000/api/packages/${packageId}`);
+        const response = await fetch(`/api/packages/${packageId}`);
         if (!response.ok) {
             throw new Error('Failed to fetch package details');
         }
@@ -2418,7 +2418,7 @@ function closePackageDetailsModal() {
 // Edit package
 async function handleEditPackage(packageId) {
     try {
-        const response = await fetch(`http://localhost:5000/api/packages/${packageId}`);
+        const response = await fetch(`/api/packages/${packageId}`);
         if (!response.ok) {
             throw new Error('Failed to fetch package details');
         }
@@ -2483,7 +2483,7 @@ async function handleDeletePackage(packageId) {
     }
     
     try {
-        const response = await fetch(`http://localhost:5000/api/packages/${packageId}`, {
+        const response = await fetch(`/api/packages/${packageId}`, {
             method: 'DELETE'
         });
         
@@ -2509,7 +2509,7 @@ async function togglePackageStatus(packageId, currentStatus) {
     const newStatus = statusOptions[(currentIndex + 1) % statusOptions.length];
     
     try {
-        const response = await fetch(`http://localhost:5000/api/packages/${packageId}/status`, {
+        const response = await fetch(`/api/packages/${packageId}/status`, {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json',
@@ -2608,7 +2608,7 @@ function closeSaleModal() {
 // Load sales from API
 async function loadSalesFromAPI() {
     try {
-        const response = await fetch('http://localhost:5000/api/sales');
+        const response = await fetch('/api/sales');
         if (!response.ok) {
             throw new Error('Failed to fetch sales');
         }
@@ -2795,7 +2795,7 @@ async function openRecordSaleModal() {
 // Load customers for sale form
 async function loadCustomersForSale() {
     try {
-        const response = await fetch('http://localhost:5000/api/customers');
+        const response = await fetch('/api/customers');
         if (!response.ok) {
             throw new Error('Failed to fetch customers');
         }
@@ -2818,7 +2818,7 @@ async function loadCustomersForSale() {
 // Load packages for sale form
 async function loadPackagesForSale() {
     try {
-        const response = await fetch('http://localhost:5000/api/packages');
+        const response = await fetch('/api/packages');
         if (!response.ok) {
             throw new Error('Failed to fetch packages');
         }
@@ -2847,7 +2847,7 @@ async function handleCustomerSelection(e) {
     
     if (customerId) {
         try {
-            const response = await fetch(`http://localhost:5000/api/customers/${customerId}`);
+            const response = await fetch(`/api/customers/${customerId}`);
             if (response.ok) {
                 const customer = await response.json();
                 customerDetails.innerHTML = `
@@ -3042,7 +3042,7 @@ async function handleSaleFormSubmit(e) {
 
 async function saveSaleToAPI(data) {
     try {
-        const response = await fetch('http://localhost:5000/api/sales', {
+        const response = await fetch('/api/sales', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -3072,7 +3072,7 @@ async function saveSaleToAPI(data) {
 
 async function updateSaleToAPI(saleId, data) {
     try {
-        const response = await fetch(`http://localhost:5000/api/sales/${saleId}`, {
+        const response = await fetch(`/api/sales/${saleId}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
@@ -3103,7 +3103,7 @@ async function updateSaleToAPI(saleId, data) {
 // View sale details
 async function handleViewSaleDetails(saleId) {
     try {
-        const response = await fetch(`http://localhost:5000/api/sales/${saleId}`);
+        const response = await fetch(`/api/sales/${saleId}`);
         if (!response.ok) {
             throw new Error('Failed to fetch sale details');
         }
@@ -3266,7 +3266,7 @@ function closeSaleDetailsModal() {
 // Edit sale
 async function handleEditSale(saleId) {
     try {
-        const response = await fetch(`http://localhost:5000/api/sales/${saleId}`);
+        const response = await fetch(`/api/sales/${saleId}`);
         if (!response.ok) {
             throw new Error('Failed to fetch sale details');
         }
@@ -3325,7 +3325,7 @@ async function handleDeleteSale(saleId) {
     }
     
     try {
-        const response = await fetch(`http://localhost:5000/api/sales/${saleId}`, {
+        const response = await fetch(`/api/sales/${saleId}`, {
             method: 'DELETE'
         });
         
@@ -3351,7 +3351,7 @@ async function toggleSaleStatus(saleId, currentStatus) {
     const newStatus = statusOptions[(currentIndex + 1) % statusOptions.length];
     
     try {
-        const response = await fetch(`http://localhost:5000/api/sales/${saleId}/status`, {
+        const response = await fetch(`/api/sales/${saleId}/status`, {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json',
@@ -3454,7 +3454,7 @@ function closeAttendanceModal() {
 // Load attendance from API
 async function loadAttendanceFromAPI() {
     try {
-        const response = await fetch('http://localhost:5000/api/attendance');
+        const response = await fetch('/api/attendance');
         if (!response.ok) {
             throw new Error('Failed to fetch attendance records');
         }
@@ -3632,7 +3632,7 @@ async function openRecordAttendanceModal() {
 // Load instructors for attendance form
 async function loadInstructorsForAttendance() {
     try {
-        const response = await fetch('http://localhost:5000/api/instructors');
+        const response = await fetch('/api/instructors');
         if (!response.ok) {
             throw new Error('Failed to fetch instructors');
         }
@@ -3655,7 +3655,7 @@ async function loadInstructorsForAttendance() {
 // Load customers for attendance form
 async function loadCustomersForAttendance() {
     try {
-        const response = await fetch('http://localhost:5000/api/customers');
+        const response = await fetch('/api/customers');
         if (!response.ok) {
             throw new Error('Failed to fetch customers');
         }
@@ -3697,7 +3697,7 @@ async function handleInstructorSelection(e) {
     
     if (instructorId) {
         try {
-            const response = await fetch(`http://localhost:5000/api/attendance/instructor/${instructorId}/classes`);
+            const response = await fetch(`/api/attendance/instructor/${instructorId}/classes`);
             if (response.ok) {
                 const classes = await response.json();
                 
@@ -3911,7 +3911,7 @@ async function handleAttendanceFormSubmit(e) {
 
 async function saveAttendanceToAPI(data) {
     try {
-        const response = await fetch('http://localhost:5000/api/attendance', {
+        const response = await fetch('/api/attendance', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -3941,7 +3941,7 @@ async function saveAttendanceToAPI(data) {
 
 async function updateAttendanceToAPI(attendanceId, data) {
     try {
-        const response = await fetch(`http://localhost:5000/api/attendance/${attendanceId}`, {
+        const response = await fetch(`/api/attendance/${attendanceId}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
@@ -3972,7 +3972,7 @@ async function updateAttendanceToAPI(attendanceId, data) {
 // View attendance details
 async function handleViewAttendanceDetails(attendanceId) {
     try {
-        const response = await fetch(`http://localhost:5000/api/attendance/${attendanceId}`);
+        const response = await fetch(`/api/attendance/${attendanceId}`);
         if (!response.ok) {
             throw new Error('Failed to fetch attendance details');
         }
@@ -4122,7 +4122,7 @@ function closeAttendanceDetailsModal() {
 // Edit attendance
 async function handleEditAttendance(attendanceId) {
     try {
-        const response = await fetch(`http://localhost:5000/api/attendance/${attendanceId}`);
+        const response = await fetch(`/api/attendance/${attendanceId}`);
         if (!response.ok) {
             throw new Error('Failed to fetch attendance details');
         }
@@ -4186,7 +4186,7 @@ async function handleDeleteAttendance(attendanceId) {
     }
     
     try {
-        const response = await fetch(`http://localhost:5000/api/attendance/${attendanceId}`, {
+        const response = await fetch(`/api/attendance/${attendanceId}`, {
             method: 'DELETE'
         });
         
@@ -4212,7 +4212,7 @@ async function toggleAttendanceStatus(attendanceId, currentStatus) {
     const newStatus = statusOptions[(currentIndex + 1) % statusOptions.length];
     
     try {
-        const response = await fetch(`http://localhost:5000/api/attendance/${attendanceId}/status`, {
+        const response = await fetch(`/api/attendance/${attendanceId}/status`, {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json',
@@ -4286,7 +4286,7 @@ async function loadReportsSummary() {
         const startDate = document.getElementById('reportStartDate')?.value;
         const endDate = document.getElementById('reportEndDate')?.value;
         
-        let url = 'http://localhost:5000/api/reports/summary';
+        let url = '/api/reports/summary';
         const params = new URLSearchParams();
         
         if (startDate) params.append('startDate', startDate);
@@ -4361,7 +4361,7 @@ async function generatePackageSalesReport() {
         const startDate = document.getElementById('reportStartDate')?.value;
         const endDate = document.getElementById('reportEndDate')?.value;
         
-        let url = 'http://localhost:5000/api/reports/package-sales';
+        let url = '/api/reports/package-sales';
         const params = new URLSearchParams();
         
         if (startDate) params.append('startDate', startDate);
@@ -4478,7 +4478,7 @@ async function generateInstructorClassesReport() {
         const startDate = document.getElementById('reportStartDate')?.value;
         const endDate = document.getElementById('reportEndDate')?.value;
         
-        let url = 'http://localhost:5000/api/reports/instructor-classes';
+        let url = '/api/reports/instructor-classes';
         const params = new URLSearchParams();
         
         if (startDate) params.append('startDate', startDate);
@@ -4586,7 +4586,7 @@ async function generateCustomerPackagesReport() {
         content.style.display = 'block';
         content.innerHTML = '<div style="text-align: center; padding: 3rem; color: #6c757d;"><i class="fas fa-spinner fa-spin fa-2x"></i><p style="margin-top: 1rem;">Generating Customer Packages Report...</p></div>';
         
-        const response = await fetch('http://localhost:5000/api/reports/customer-packages');
+        const response = await fetch('/api/reports/customer-packages');
         if (!response.ok) {
             throw new Error('Failed to fetch customer packages report');
         }
@@ -4699,7 +4699,7 @@ async function generateTeacherPaymentsReport() {
         const month = document.getElementById('paymentMonth')?.value;
         const year = document.getElementById('paymentYear')?.value;
         
-        let url = 'http://localhost:5000/api/reports/teacher-payments';
+        let url = '/api/reports/teacher-payments';
         const params = new URLSearchParams();
         
         if (month) params.append('month', month);
@@ -4870,7 +4870,7 @@ function exportAllReports() {
 // Load customers from API
 async function loadCustomersFromAPI() {
     try {
-        const response = await fetch('http://localhost:5000/api/customers');
+        const response = await fetch('/api/customers');
         if (!response.ok) {
             throw new Error('Failed to fetch customers');
         }
@@ -5019,7 +5019,7 @@ async function refreshCustomerList() {
 // View customer details
 async function handleViewCustomerDetails(customerId) {
     try {
-        const response = await fetch(`http://localhost:5000/api/customers/${customerId}`);
+        const response = await fetch(`/api/customers/${customerId}`);
         if (!response.ok) {
             throw new Error('Failed to fetch customer details');
         }
@@ -5168,7 +5168,7 @@ function closeCustomerDetailsModal() {
 // Edit customer
 async function handleEditCustomer(customerId) {
     try {
-        const response = await fetch(`http://localhost:5000/api/customers/${customerId}`);
+        const response = await fetch(`/api/customers/${customerId}`);
         if (!response.ok) {
             throw new Error('Failed to fetch customer details');
         }
@@ -5351,7 +5351,7 @@ async function handleCustomerFormSubmit(e) {
 
 async function saveCustomerToAPI(data) {
     try {
-        const response = await fetch('http://localhost:5000/api/customers', {
+        const response = await fetch('/api/customers', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -5381,7 +5381,7 @@ async function saveCustomerToAPI(data) {
 
 async function updateCustomerToAPI(customerId, data) {
     try {
-        const response = await fetch(`http://localhost:5000/api/customers/${customerId}`, {
+        const response = await fetch(`/api/customers/${customerId}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
@@ -5416,7 +5416,7 @@ async function handleDeleteCustomer(customerId) {
     }
     
     try {
-        const response = await fetch(`http://localhost:5000/api/customers/${customerId}`, {
+        const response = await fetch(`/api/customers/${customerId}`, {
             method: 'DELETE'
         });
         
@@ -5442,7 +5442,7 @@ async function toggleCustomerStatus(customerId, currentStatus) {
     const newStatus = statusOptions[(currentIndex + 1) % statusOptions.length];
     
     try {
-        const response = await fetch(`http://localhost:5000/api/customers/${customerId}/status`, {
+        const response = await fetch(`/api/customers/${customerId}/status`, {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json',
