@@ -82,10 +82,16 @@ app.get('/api/test-db', async (req, res) => {
 // Manual connection test endpoint
 app.get('/api/connect-db', async (req, res) => {
   try {
-    const mongoURI = process.env.MONGODB_URI || 'mongodb+srv://jackson24le_db_user:NKyPanxvAVPYnox9@yogitrack.4cr0alt.mongodb.net/yogitrack?retryWrites=true&w=majority&appName=YogiTrack';
+    let mongoURI = process.env.MONGODB_URI || 'mongodb+srv://jackson24le_db_user:NKyPanxvAVPYnox9@yogitrack.4cr0alt.mongodb.net/yogitrack?retryWrites=true&w=majority&appName=YogiTrack';
+    
+    // Clean the connection string
+    mongoURI = mongoURI.trim();
     
     console.log('Attempting manual connection...');
     console.log('URI exists:', !!process.env.MONGODB_URI);
+    console.log('URI length:', mongoURI.length);
+    console.log('URI starts with:', mongoURI.substring(0, 20));
+    console.log('URI ends with:', mongoURI.substring(mongoURI.length - 20));
     
     await mongoose.connect(mongoURI, {
       useNewUrlParser: true,
@@ -102,7 +108,9 @@ app.get('/api/connect-db', async (req, res) => {
       success: false,
       message: 'Manual connection failed',
       error: error.message,
-      connectionState: mongoose.connection.readyState
+      connectionState: mongoose.connection.readyState,
+      uriLength: mongoURI ? mongoURI.length : 0,
+      uriStart: mongoURI ? mongoURI.substring(0, 20) : 'undefined'
     });
   }
 });
