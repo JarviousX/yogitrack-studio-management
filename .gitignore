@@ -79,9 +79,13 @@ Thumbs.db
 # IDE files
 .vscode/
 .idea/
+.cursor/
 *.swp
 *.swo
 *~
+
+# Documentation files
+*.md
 
 # Temporary files
 *.tmp
