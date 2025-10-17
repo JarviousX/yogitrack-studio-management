@@ -109,7 +109,15 @@ app.get('/api/connect-db', async (req, res) => {
 
 // Catch-all handler: send back index.html for any non-API routes
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../index.html'));
+  // Only serve index.html for non-API routes
+  if (!req.path.startsWith('/api/')) {
+    res.sendFile(path.join(__dirname, '../index.html'));
+  } else {
+    res.status(404).json({
+      success: false,
+      message: 'API endpoint not found'
+    });
+  }
 });
 
 // Error handling middleware
