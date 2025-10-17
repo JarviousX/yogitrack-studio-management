@@ -51,8 +51,30 @@ app.get('/api/health', (req, res) => {
     success: true,
     message: 'YogiTrack API is running',
     timestamp: new Date().toISOString(),
-    database: mongoose.connection.readyState === 1 ? 'connected' : 'disconnected'
+    database: mongoose.connection.readyState === 1 ? 'connected' : 'disconnected',
+    mongodb_uri: process.env.MONGODB_URI ? 'Set' : 'Not set'
   });
+});
+
+// Test MongoDB connection endpoint
+app.get('/api/test-db', async (req, res) => {
+  try {
+    const Instructor = require('./models/Instructor');
+    const count = await Instructor.countDocuments();
+    res.json({
+      success: true,
+      message: 'Database connection successful',
+      instructorCount: count,
+      connectionState: mongoose.connection.readyState
+    });
+  } catch (error) {
+    res.json({
+      success: false,
+      message: 'Database connection failed',
+      error: error.message,
+      connectionState: mongoose.connection.readyState
+    });
+  }
 });
 
 // Catch-all handler: send back index.html for any non-API routes
