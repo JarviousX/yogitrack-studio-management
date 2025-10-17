@@ -1,0 +1,1989 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YogiTrack - Yoga H'om Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <nav class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="header-content">
+                <div class="yoga-icon">
+                    <i class="fas fa-spa"></i>
+                </div>
+                <div class="header-text">
+                    <h2>YogiTrack</h2>
+                    <p>Yoga H'om Studio</p>
+                </div>
+            </div>
+        </div>
+        
+        <ul class="sidebar-menu">
+            <li class="menu-item active" data-section="dashboard" data-tooltip="Dashboard">
+                <i class="fas fa-tachometer-alt"></i>
+                <span>Dashboard</span>
+            </li>
+            <li class="menu-item" data-section="instructors" data-tooltip="Instructors">
+                <i class="fas fa-user-tie"></i>
+                <span>Instructors</span>
+            </li>
+            <li class="menu-item" data-section="customers" data-tooltip="Customers">
+                <i class="fas fa-users"></i>
+                <span>Customers</span>
+            </li>
+            <li class="menu-item" data-section="classes" data-tooltip="Classes">
+                <i class="fas fa-calendar-alt"></i>
+                <span>Classes</span>
+            </li>
+            <li class="menu-item" data-section="packages" data-tooltip="Packages">
+                <i class="fas fa-box"></i>
+                <span>Packages</span>
+            </li>
+            <li class="menu-item" data-section="sales" data-tooltip="Sales">
+                <i class="fas fa-shopping-cart"></i>
+                <span>Sales</span>
+            </li>
+            <li class="menu-item" data-section="attendance" data-tooltip="Attendance">
+                <i class="fas fa-clipboard-check"></i>
+                <span>Attendance</span>
+            </li>
+            <li class="menu-item" data-section="reports" data-tooltip="Reports">
+                <i class="fas fa-chart-bar"></i>
+                <span>Reports</span>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Minimal Gradient Header -->
+        <header class="top-header" id="gradientHeader"></header>
+
+        <!-- Dashboard Section -->
+        <section class="content-section active" id="dashboard">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>12</h3>
+                        <p>Active Instructors</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>156</h3>
+                        <p>Total Customers</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>28</h3>
+                        <p>Classes This Week</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>$4,250</h3>
+                        <p>Monthly Revenue</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard-grid">
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h3>Recent Classes</h3>
+                        <button class="btn btn-sm">View All</button>
+                    </div>
+                    <div class="card-content">
+                        <div class="class-item">
+                            <div class="class-time">9:00 AM</div>
+                            <div class="class-details">
+                                <h4>Morning Flow</h4>
+                                <p>Instructor: Sarah Johnson</p>
+                            </div>
+                            <div class="class-attendance">12/15</div>
+                        </div>
+                        <div class="class-item">
+                            <div class="class-time">6:00 PM</div>
+                            <div class="class-details">
+                                <h4>Evening Restore</h4>
+                                <p>Instructor: Mike Chen</p>
+                            </div>
+                            <div class="class-attendance">8/12</div>
+                        </div>
+                        <div class="class-item">
+                            <div class="class-time">7:30 PM</div>
+                            <div class="class-details">
+                                <h4>Power Yoga</h4>
+                                <p>Instructor: Lisa Rodriguez</p>
+                            </div>
+                            <div class="class-attendance">15/15</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h3>Quick Actions</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="quick-actions">
+                            <button class="action-btn" data-action="add-instructor">
+                                <i class="fas fa-user-plus"></i>
+                                <span>Add Instructor</span>
+                            </button>
+                            <button class="action-btn" data-action="add-customer">
+                                <i class="fas fa-user-plus"></i>
+                                <span>Add Customer</span>
+                            </button>
+                            <button class="action-btn" data-action="add-class">
+                                <i class="fas fa-calendar-plus"></i>
+                                <span>Schedule Class</span>
+                            </button>
+                            <button class="action-btn" data-action="record-sale">
+                                <i class="fas fa-shopping-cart"></i>
+                                <span>Record Sale</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Instructors Section -->
+        <section class="content-section" id="instructors">
+            <div class="section-header">
+                <div class="header-left">
+                    <h2>Instructors</h2>
+                    <p>Manage your yoga instructors and their schedules</p>
+                </div>
+                <div class="header-actions">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search instructors..." id="instructorSearch">
+                    </div>
+                    <button class="btn btn-secondary" id="refreshInstructorsBtn" title="Refresh List">
+                        <i class="fas fa-sync-alt"></i>
+                    </button>
+                    <button class="btn btn-primary" id="addInstructorBtn">
+                        <i class="fas fa-plus"></i> Add Instructor
+                    </button>
+                </div>
+            </div>
+
+            <!-- Instructor Stats Cards -->
+            <div class="instructor-stats">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="totalInstructors">0</h3>
+                        <p>Total Instructors</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="classesThisWeek">0</h3>
+                        <p>Classes This Week</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="averageRating">0.0</h3>
+                        <p>Average Rating</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="monthlyPayroll">$0</h3>
+                        <p>Monthly Payroll</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Instructors Table -->
+            <div class="data-table">
+                <div class="table-header">
+                    <h3>All Instructors</h3>
+                    <div class="table-actions">
+                        <button class="btn btn-sm btn-secondary">
+                            <i class="fas fa-download"></i> Export
+                        </button>
+                        <button class="btn btn-sm btn-secondary">
+                            <i class="fas fa-filter"></i> Filter
+                        </button>
+                    </div>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Instructor</th>
+                            <th>Contact</th>
+                            <th>Specialties</th>
+                            <th>Classes</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="instructor-id">I00123</span></td>
+                            <td>
+                                <div class="instructor-info">
+                                    <div class="instructor-avatar">
+                                        <i class="fas fa-user"></i>
+                                    </div>
+                                    <div class="instructor-details">
+                                        <h4>Sarah Johnson</h4>
+                                        <p>Senior Instructor</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="contact-info">
+                                    <p><i class="fas fa-envelope"></i> sarah@yogahom.com</p>
+                                    <p><i class="fas fa-phone"></i> (555) 123-4567</p>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="specialties">
+                                    <span class="specialty-tag">Hatha</span>
+                                    <span class="specialty-tag">Vinyasa</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="class-info">
+                                    <span class="class-count">8 classes</span>
+                                    <p class="class-schedule">Mon, Wed, Fri</p>
+                                </div>
+                            </td>
+                            <td>
+                                <span class="status-badge active">Active</span>
+                            </td>
+                            <td>
+                                <div class="action-buttons">
+                                    <button class="btn btn-sm btn-secondary" title="View Details">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="btn btn-sm btn-secondary" title="Edit">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button class="btn btn-sm btn-danger" title="Delete">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span class="instructor-id">I00124</span></td>
+                            <td>
+                                <div class="instructor-info">
+                                    <div class="instructor-avatar">
+                                        <i class="fas fa-user"></i>
+                                    </div>
+                                    <div class="instructor-details">
+                                        <h4>Mike Chen</h4>
+                                        <p>Yoga Therapist</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="contact-info">
+                                    <p><i class="fas fa-envelope"></i> mike@yogahom.com</p>
+                                    <p><i class="fas fa-phone"></i> (555) 234-5678</p>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="specialties">
+                                    <span class="specialty-tag">Restorative</span>
+                                    <span class="specialty-tag">Yin</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="class-info">
+                                    <span class="class-count">6 classes</span>
+                                    <p class="class-schedule">Tue, Thu, Sat</p>
+                                </div>
+                            </td>
+                            <td>
+                                <span class="status-badge active">Active</span>
+                            </td>
+                            <td>
+                                <div class="action-buttons">
+                                    <button class="btn btn-sm btn-secondary" title="View Details">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="btn btn-sm btn-secondary" title="Edit">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button class="btn btn-sm btn-danger" title="Delete">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span class="instructor-id">I00125</span></td>
+                            <td>
+                                <div class="instructor-info">
+                                    <div class="instructor-avatar">
+                                        <i class="fas fa-user"></i>
+                                    </div>
+                                    <div class="instructor-details">
+                                        <h4>Lisa Rodriguez</h4>
+                                        <p>Power Yoga Expert</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="contact-info">
+                                    <p><i class="fas fa-envelope"></i> lisa@yogahom.com</p>
+                                    <p><i class="fas fa-phone"></i> (555) 345-6789</p>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="specialties">
+                                    <span class="specialty-tag">Power</span>
+                                    <span class="specialty-tag">Hot Yoga</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="class-info">
+                                    <span class="class-count">10 classes</span>
+                                    <p class="class-schedule">Daily</p>
+                                </div>
+                            </td>
+                            <td>
+                                <span class="status-badge active">Active</span>
+                            </td>
+                            <td>
+                                <div class="action-buttons">
+                                    <button class="btn btn-sm btn-secondary" title="View Details">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="btn btn-sm btn-secondary" title="Edit">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button class="btn btn-sm btn-danger" title="Delete">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Customers Section -->
+        <section class="content-section" id="customers">
+            <div class="section-header">
+                <div class="header-left">
+                    <h2>Customers</h2>
+                    <p>Manage your yoga studio customers and their memberships</p>
+                </div>
+                <div class="header-actions">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search customers..." id="customerSearch">
+                    </div>
+                    <button class="btn btn-secondary" id="refreshCustomersBtn" title="Refresh List">
+                        <i class="fas fa-sync-alt"></i>
+                    </button>
+                    <button class="btn btn-primary" id="addCustomerBtn">
+                        <i class="fas fa-plus"></i> Add Customer
+                    </button>
+                </div>
+            </div>
+
+            <!-- Customer Stats Cards -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="totalCustomers">0</h3>
+                        <p>Total Customers</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-user-check"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="activeCustomers">0</h3>
+                        <p>Active Members</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="customerClassesThisWeek">0</h3>
+                        <p>Classes This Week</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="totalRevenue">$0</h3>
+                        <p>Total Revenue</p>
+                    </div>
+                </div>
+            </div>
+            <div class="data-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Customer</th>
+                            <th>Contact</th>
+                            <th>Membership</th>
+                            <th>Classes</th>
+                            <th>Balance</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="customersTableBody">
+                        <!-- Customers will be loaded here -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Classes Section -->
+        <section class="content-section" id="classes">
+            <div class="section-header">
+                <div class="header-left">
+                    <h2>Classes</h2>
+                    <p>Manage your yoga classes and weekly schedule</p>
+                </div>
+                <div class="header-actions">
+                    <div class="view-toggle">
+                        <button class="btn btn-secondary active" id="scheduleViewBtn">
+                            <i class="fas fa-calendar-week"></i> Schedule View
+                        </button>
+                        <button class="btn btn-secondary" id="listViewBtn">
+                            <i class="fas fa-list"></i> List View
+                        </button>
+                    </div>
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search classes..." id="classSearch">
+                    </div>
+                    <button class="btn btn-primary" id="addClassBtn">
+                        <i class="fas fa-plus"></i> Add Class
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Weekly Schedule View -->
+            <div class="schedule-view" id="scheduleView">
+                <div class="schedule-header">
+                    <h3>Weekly Class Schedule</h3>
+                    <div class="schedule-legend">
+                        <div class="legend-item">
+                            <span class="legend-color all-levels"></span>
+                            <span>All Levels</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-color beginner"></span>
+                            <span>Beginner</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-color advanced"></span>
+                            <span>Advanced</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-color restorative"></span>
+                            <span>Restorative</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="weekly-schedule">
+                    <div class="schedule-day sunday">
+                        <div class="day-header">
+                            <h4>Sunday</h4>
+                        </div>
+                        <div class="day-classes" id="sundayClasses">
+                            <!-- Classes will be loaded here -->
+                        </div>
+                    </div>
+                    
+                    <div class="schedule-day monday">
+                        <div class="day-header">
+                            <h4>Monday</h4>
+                        </div>
+                        <div class="day-classes" id="mondayClasses">
+                            <!-- Classes will be loaded here -->
+                        </div>
+                    </div>
+                    
+                    <div class="schedule-day tuesday">
+                        <div class="day-header">
+                            <h4>Tuesday</h4>
+                        </div>
+                        <div class="day-classes" id="tuesdayClasses">
+                            <!-- Classes will be loaded here -->
+                        </div>
+                    </div>
+                    
+                    <div class="schedule-day wednesday">
+                        <div class="day-header">
+                            <h4>Wednesday</h4>
+                        </div>
+                        <div class="day-classes" id="wednesdayClasses">
+                            <!-- Classes will be loaded here -->
+                        </div>
+                    </div>
+                    
+                    <div class="schedule-day thursday">
+                        <div class="day-header">
+                            <h4>Thursday</h4>
+                        </div>
+                        <div class="day-classes" id="thursdayClasses">
+                            <!-- Classes will be loaded here -->
+                        </div>
+                    </div>
+                    
+                    <div class="schedule-day friday">
+                        <div class="day-header">
+                            <h4>Friday</h4>
+                        </div>
+                        <div class="day-classes" id="fridayClasses">
+                            <!-- Classes will be loaded here -->
+                        </div>
+                    </div>
+                    
+                    <div class="schedule-day saturday">
+                        <div class="day-header">
+                            <h4>Saturday</h4>
+                        </div>
+                        <div class="day-classes" id="saturdayClasses">
+                            <!-- Classes will be loaded here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- List View -->
+            <div class="list-view" id="listView" style="display: none;">
+                <div class="data-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Class ID</th>
+                                <th>Class Name</th>
+                                <th>Instructor</th>
+                                <th>Day</th>
+                                <th>Time</th>
+                                <th>Level</th>
+                                <th>Capacity</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="classesTableBody">
+                            <!-- Classes will be loaded here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Packages Section -->
+        <section class="content-section" id="packages">
+            <div class="section-header">
+                <div class="header-left">
+                    <h2>Packages</h2>
+                    <p>Manage your yoga studio packages and pricing</p>
+                </div>
+                <div class="header-actions">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search packages..." id="packageSearch">
+                    </div>
+                    <button class="btn btn-secondary" id="refreshPackagesBtn" title="Refresh List">
+                        <i class="fas fa-sync-alt"></i>
+                    </button>
+                    <button class="btn btn-primary" id="addPackageBtn">
+                        <i class="fas fa-plus"></i> Add Package
+                    </button>
+                </div>
+            </div>
+
+            <!-- Package Stats Cards -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-box"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="totalPackages">0</h3>
+                        <p>Total Packages</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="activePackages">0</h3>
+                        <p>Active Packages</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="totalSales">0</h3>
+                        <p>Total Sales</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="packageRevenue">$0</h3>
+                        <p>Package Revenue</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- View Toggle -->
+            <div class="view-toggle">
+                <button class="btn btn-sm" id="packageCardView" onclick="togglePackageView('cards')">
+                    <i class="fas fa-th-large"></i> Card View
+                </button>
+                <button class="btn btn-sm" id="packageListView" onclick="togglePackageView('list')">
+                    <i class="fas fa-list"></i> List View
+                </button>
+            </div>
+
+            <!-- Package Cards View -->
+            <div class="packages-grid" id="packageCardsView">
+                <!-- Package cards will be loaded here -->
+            </div>
+
+            <!-- Package List View -->
+            <div class="data-table" id="packageListView" style="display: none;">
+                <div class="table-header">
+                    <h3>All Packages</h3>
+                    <div class="table-actions">
+                        <button class="btn btn-sm btn-secondary">
+                            <i class="fas fa-download"></i> Export
+                        </button>
+                        <button class="btn btn-sm btn-secondary">
+                            <i class="fas fa-filter"></i> Filter
+                        </button>
+                    </div>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Package</th>
+                            <th>Type</th>
+                            <th>Classes</th>
+                            <th>Price</th>
+                            <th>Validity</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="packagesTableBody">
+                        <!-- Packages will be loaded here -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Sales Section -->
+        <section class="content-section" id="sales">
+            <div class="section-header">
+                <div class="header-left">
+                    <h2>Sales</h2>
+                    <p>Record and manage package sales to customers</p>
+                </div>
+                <div class="header-actions">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search sales..." id="saleSearch">
+                    </div>
+                    <button class="btn btn-secondary" id="refreshSalesBtn" title="Refresh List">
+                        <i class="fas fa-sync-alt"></i>
+                    </button>
+                    <button class="btn btn-primary" id="recordSaleBtn">
+                        <i class="fas fa-plus"></i> Record Sale
+                    </button>
+                </div>
+            </div>
+
+            <!-- Sales Stats Cards -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="totalSales">0</h3>
+                        <p>Total Sales</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="totalRevenue">$0</h3>
+                        <p>Total Revenue</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-calendar-day"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="todaySales">0</h3>
+                        <p>Today's Sales</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="monthlyRevenue">$0</h3>
+                        <p>This Month</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sales Table -->
+            <div class="data-table">
+                <div class="table-header">
+                    <h3>All Sales</h3>
+                    <div class="table-actions">
+                        <button class="btn btn-sm btn-secondary">
+                            <i class="fas fa-download"></i> Export
+                        </button>
+                        <button class="btn btn-sm btn-secondary">
+                            <i class="fas fa-filter"></i> Filter
+                        </button>
+                    </div>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Sale ID</th>
+                            <th>Date</th>
+                            <th>Customer</th>
+                            <th>Package</th>
+                            <th>Amount</th>
+                            <th>Payment</th>
+                            <th>Validity</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="salesTableBody">
+                        <!-- Sales will be loaded here -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Attendance Section -->
+        <section class="content-section" id="attendance">
+            <div class="section-header">
+                <div class="header-left">
+                    <h2>Class Attendance</h2>
+                    <p>Record and manage class attendance for instructors</p>
+                </div>
+                <div class="header-actions">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search attendance..." id="attendanceSearch">
+                    </div>
+                    <button class="btn btn-secondary" id="refreshAttendanceBtn" title="Refresh List">
+                        <i class="fas fa-sync-alt"></i>
+                    </button>
+                    <button class="btn btn-primary" id="recordAttendanceBtn">
+                        <i class="fas fa-plus"></i> Record Attendance
+                    </button>
+                </div>
+            </div>
+
+            <!-- Attendance Stats Cards -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="totalAttendance">0</h3>
+                        <p>Total Records</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="totalAttendees">0</h3>
+                        <p>Total Attendees</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-calendar-day"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="todayAttendance">0</h3>
+                        <p>Today's Classes</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="scheduleWarnings">0</h3>
+                        <p>Schedule Warnings</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Attendance Table -->
+            <div class="data-table">
+                <div class="table-header">
+                    <h3>All Attendance Records</h3>
+                    <div class="table-actions">
+                        <button class="btn btn-sm btn-secondary">
+                            <i class="fas fa-download"></i> Export
+                        </button>
+                        <button class="btn btn-sm btn-secondary">
+                            <i class="fas fa-filter"></i> Filter
+                        </button>
+                    </div>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Record ID</th>
+                            <th>Date & Time</th>
+                            <th>Class</th>
+                            <th>Instructor</th>
+                            <th>Attendees</th>
+                            <th>Status</th>
+                            <th>Schedule</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="attendanceTableBody">
+                        <!-- Attendance records will be loaded here -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Reports Section -->
+        <section class="content-section" id="reports">
+            <div class="section-header">
+                <div class="header-left">
+                    <h2>Studio Reports</h2>
+                    <p>Generate comprehensive reports for studio management</p>
+                </div>
+                <div class="header-actions">
+                    <div class="date-range-picker">
+                        <label for="reportStartDate">From:</label>
+                        <input type="date" id="reportStartDate" name="startDate">
+                        <label for="reportEndDate">To:</label>
+                        <input type="date" id="reportEndDate" name="endDate">
+                    </div>
+                    <button class="btn btn-secondary" id="refreshReportsBtn" title="Refresh Reports">
+                        <i class="fas fa-sync-alt"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Studio Overview Stats -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="totalRevenue">$0</h3>
+                        <p>Total Revenue</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="totalSales">0</h3>
+                        <p>Total Sales</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="totalCheckIns">0</h3>
+                        <p>Total Check-ins</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="totalClasses">0</h3>
+                        <p>Total Classes</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Report Cards -->
+            <div class="reports-grid">
+                <div class="report-card" id="packageSalesReport">
+                    <div class="report-header">
+                        <div class="report-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                        <div class="report-title">
+                            <h3>Package Sales Report</h3>
+                            <p>Sales performance and revenue analysis</p>
+                        </div>
+                    </div>
+                    <div class="report-actions">
+                        <button class="btn btn-primary" onclick="generatePackageSalesReport()">
+                            <i class="fas fa-chart-bar"></i> Generate Report
+                        </button>
+                    </div>
+                    <div class="report-content" id="packageSalesContent" style="display: none;">
+                        <!-- Report content will be loaded here -->
+                    </div>
+                </div>
+
+                <div class="report-card" id="instructorClassesReport">
+                    <div class="report-header">
+                        <div class="report-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="report-title">
+                            <h3>Instructor Classes Report</h3>
+                            <p>Instructor performance and class attendance</p>
+                        </div>
+                    </div>
+                    <div class="report-actions">
+                        <button class="btn btn-primary" onclick="generateInstructorClassesReport()">
+                            <i class="fas fa-chart-bar"></i> Generate Report
+                        </button>
+                    </div>
+                    <div class="report-content" id="instructorClassesContent" style="display: none;">
+                        <!-- Report content will be loaded here -->
+                    </div>
+                </div>
+
+                <div class="report-card" id="customerPackagesReport">
+                    <div class="report-header">
+                        <div class="report-icon">
+                            <i class="fas fa-user-friends"></i>
+                        </div>
+                        <div class="report-title">
+                            <h3>Customer Packages Report</h3>
+                            <p>Customer package status and utilization</p>
+                        </div>
+                    </div>
+                    <div class="report-actions">
+                        <button class="btn btn-primary" onclick="generateCustomerPackagesReport()">
+                            <i class="fas fa-chart-bar"></i> Generate Report
+                        </button>
+                    </div>
+                    <div class="report-content" id="customerPackagesContent" style="display: none;">
+                        <!-- Report content will be loaded here -->
+                    </div>
+                </div>
+
+                <div class="report-card" id="teacherPaymentsReport">
+                    <div class="report-header">
+                        <div class="report-icon">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                        <div class="report-title">
+                            <h3>Teacher Payment Report</h3>
+                            <p>Monthly instructor payments and bonuses</p>
+                        </div>
+                    </div>
+                    <div class="report-actions">
+                        <div class="report-filters">
+                            <select id="paymentMonth" class="form-control">
+                                <option value="">Select Month</option>
+                                <option value="1">January</option>
+                                <option value="2">February</option>
+                                <option value="3">March</option>
+                                <option value="4">April</option>
+                                <option value="5">May</option>
+                                <option value="6">June</option>
+                                <option value="7">July</option>
+                                <option value="8">August</option>
+                                <option value="9">September</option>
+                                <option value="10">October</option>
+                                <option value="11">November</option>
+                                <option value="12">December</option>
+                            </select>
+                            <select id="paymentYear" class="form-control">
+                                <option value="2024">2024</option>
+                                <option value="2023">2023</option>
+                            </select>
+                        </div>
+                        <button class="btn btn-primary" onclick="generateTeacherPaymentsReport()">
+                            <i class="fas fa-chart-bar"></i> Generate Report
+                        </button>
+                    </div>
+                    <div class="report-content" id="teacherPaymentsContent" style="display: none;">
+                        <!-- Report content will be loaded here -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Instructor Form Modal -->
+    <div class="modal" id="instructorModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Add New Instructor</h2>
+                <button class="modal-close" id="closeModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form id="instructorForm" class="instructor-form">
+                <div class="form-section">
+                    <h3>Personal Information</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name *</label>
+                            <input type="text" id="firstName" name="firstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name *</label>
+                            <input type="text" id="lastName" name="lastName" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3>Address Information</h3>
+                    <div class="form-group">
+                        <label for="street">Street Address *</label>
+                        <input type="text" id="street" name="address.street" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="city">City *</label>
+                            <input type="text" id="city" name="address.city" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="state">State *</label>
+                            <input type="text" id="state" name="address.state" maxlength="2" placeholder="CA" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="zipCode">ZIP Code *</label>
+                            <input type="text" id="zipCode" name="address.zipCode" placeholder="12345" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3>Professional Information</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="payRate">Pay Rate (per class) *</label>
+                            <div class="input-group">
+                                <span class="input-prefix">$</span>
+                                <input type="number" id="payRate" name="payRate" step="0.01" min="0" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="preferredCommunication">Preferred Communication *</label>
+                            <select id="preferredCommunication" name="preferredCommunication" required>
+                                <option value="">Select preference</option>
+                                <option value="email">Email</option>
+                                <option value="phone">Phone</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="specialties">Yoga Specialties</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="specialties" value="Hatha">
+                                <span class="checkmark"></span>
+                                Hatha
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="specialties" value="Vinyasa">
+                                <span class="checkmark"></span>
+                                Vinyasa
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="specialties" value="Ashtanga">
+                                <span class="checkmark"></span>
+                                Ashtanga
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="specialties" value="Power Yoga">
+                                <span class="checkmark"></span>
+                                Power Yoga
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="specialties" value="Restorative">
+                                <span class="checkmark"></span>
+                                Restorative
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="specialties" value="Yin">
+                                <span class="checkmark"></span>
+                                Yin
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="specialties" value="Hot Yoga">
+                                <span class="checkmark"></span>
+                                Hot Yoga
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="specialties" value="Prenatal">
+                                <span class="checkmark"></span>
+                                Prenatal
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="bio">Bio</label>
+                        <textarea id="bio" name="bio" rows="4" maxlength="500" placeholder="Tell us about your yoga journey and teaching philosophy..."></textarea>
+                        <div class="char-count">
+                            <span id="bioCount">0</span>/500 characters
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3>Emergency Contact</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="emergencyName">Emergency Contact Name</label>
+                            <input type="text" id="emergencyName" name="emergencyContact.name">
+                        </div>
+                        <div class="form-group">
+                            <label for="emergencyRelationship">Relationship</label>
+                            <input type="text" id="emergencyRelationship" name="emergencyContact.relationship">
+                        </div>
+                        <div class="form-group">
+                            <label for="emergencyPhone">Emergency Contact Phone</label>
+                            <input type="tel" id="emergencyPhone" name="emergencyContact.phone" placeholder="(555) 123-4567">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" id="cancelForm">Cancel</button>
+                    <button type="submit" class="btn btn-primary" id="submitForm">
+                        <i class="fas fa-save"></i> Save Instructor
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Class Form Modal -->
+    <div class="modal" id="classModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="classModalTitle">Add New Class</h2>
+                <button class="modal-close" id="closeClassModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form id="classForm" class="class-form">
+                <!-- Basic Information -->
+                <div class="form-section">
+                    <h3>Basic Information</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="className">Class Name *</label>
+                            <input type="text" id="className" name="name" required placeholder="e.g., Morning Flow, Power Yoga">
+                        </div>
+                        <div class="form-group">
+                            <label for="classLevel">Level *</label>
+                            <select id="classLevel" name="level" required>
+                                <option value="">Select Level</option>
+                                <option value="All Levels">All Levels</option>
+                                <option value="Beginner">Beginner</option>
+                                <option value="Intermediate">Intermediate</option>
+                                <option value="Advanced">Advanced</option>
+                                <option value="With Weights">With Weights</option>
+                                <option value="Restorative">Restorative</option>
+                                <option value="Chair">Chair</option>
+                                <option value="Yin">Yin</option>
+                                <option value="Prenatal">Prenatal</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="classDescription">Description</label>
+                        <textarea id="classDescription" name="description" rows="3" placeholder="Brief description of the class..."></textarea>
+                    </div>
+                </div>
+
+                <!-- Schedule Information -->
+                <div class="form-section">
+                    <h3>Schedule Information</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="classDay">Day of Week *</label>
+                            <select id="classDay" name="dayOfWeek" required>
+                                <option value="">Select Day</option>
+                                <option value="Sunday">Sunday</option>
+                                <option value="Monday">Monday</option>
+                                <option value="Tuesday">Tuesday</option>
+                                <option value="Wednesday">Wednesday</option>
+                                <option value="Thursday">Thursday</option>
+                                <option value="Friday">Friday</option>
+                                <option value="Saturday">Saturday</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="classInstructor">Instructor *</label>
+                            <select id="classInstructor" name="instructor" required>
+                                <option value="">Select Instructor</option>
+                                <!-- Instructors will be populated dynamically -->
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="startTime">Start Time *</label>
+                            <input type="time" id="startTime" name="startTime" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="endTime">End Time *</label>
+                            <input type="time" id="endTime" name="endTime" required>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Class Details -->
+                <div class="form-section">
+                    <h3>Class Details</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="maxCapacity">Max Capacity *</label>
+                            <input type="number" id="maxCapacity" name="maxCapacity" min="1" max="50" value="20" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="classPrice">Price per Class</label>
+                            <div class="input-group">
+                                <span class="input-prefix">$</span>
+                                <input type="number" id="classPrice" name="price" min="0" step="0.01" value="20" placeholder="20.00">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="classRoom">Room</label>
+                            <select id="classRoom" name="room">
+                                <option value="Main Studio">Main Studio</option>
+                                <option value="Small Studio">Small Studio</option>
+                                <option value="Outdoor Space">Outdoor Space</option>
+                                <option value="Conference Room">Conference Room</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="classStatus">Status</label>
+                            <select id="classStatus" name="isActive">
+                                <option value="true">Active</option>
+                                <option value="false">Inactive</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Equipment -->
+                <div class="form-section">
+                    <h3>Equipment Needed</h3>
+                    <div class="checkbox-group">
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="equipment" value="Mats">
+                            <span class="checkmark"></span>
+                            Yoga Mats
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="equipment" value="Blocks">
+                            <span class="checkmark"></span>
+                            Blocks
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="equipment" value="Straps">
+                            <span class="checkmark"></span>
+                            Straps
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="equipment" value="Bolsters">
+                            <span class="checkmark"></span>
+                            Bolsters
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="equipment" value="Weights">
+                            <span class="checkmark"></span>
+                            Weights
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="equipment" value="Blankets">
+                            <span class="checkmark"></span>
+                            Blankets
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="equipment" value="Eye Pillows">
+                            <span class="checkmark"></span>
+                            Eye Pillows
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Notes -->
+                <div class="form-section">
+                    <h3>Additional Notes</h3>
+                    <div class="form-group">
+                        <label for="classNotes">Notes</label>
+                        <textarea id="classNotes" name="notes" rows="3" placeholder="Any special instructions or notes for this class..."></textarea>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" id="cancelClassForm">Cancel</button>
+                    <button type="submit" class="btn btn-primary" id="submitClassForm">
+                        <i class="fas fa-save"></i> Save Class
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Customer Form Modal -->
+    <div class="modal" id="customerModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="customerModalTitle">Add New Customer</h2>
+                <button class="modal-close" id="closeCustomerModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form id="customerForm" class="customer-form">
+                <!-- Basic Information -->
+                <div class="form-section">
+                    <h3>Basic Information</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="customerFirstName">First Name *</label>
+                            <input type="text" id="customerFirstName" name="firstName" required placeholder="e.g., Emma">
+                        </div>
+                        <div class="form-group">
+                            <label for="customerLastName">Last Name *</label>
+                            <input type="text" id="customerLastName" name="lastName" required placeholder="e.g., Wilson">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="customerEmail">Email *</label>
+                            <input type="email" id="customerEmail" name="email" required placeholder="emma@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="customerPhone">Phone *</label>
+                            <input type="tel" id="customerPhone" name="phone" required placeholder="(555) 123-4567">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="customerDateOfBirth">Date of Birth *</label>
+                            <input type="date" id="customerDateOfBirth" name="dateOfBirth" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="customerFitnessLevel">Fitness Level</label>
+                            <select id="customerFitnessLevel" name="fitnessLevel">
+                                <option value="Beginner">Beginner</option>
+                                <option value="Intermediate">Intermediate</option>
+                                <option value="Advanced">Advanced</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Address Information -->
+                <div class="form-section">
+                    <h3>Address Information</h3>
+                    <div class="form-group">
+                        <label for="customerStreet">Street Address *</label>
+                        <input type="text" id="customerStreet" name="address.street" required placeholder="123 Main Street">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="customerCity">City *</label>
+                            <input type="text" id="customerCity" name="address.city" required placeholder="San Francisco">
+                        </div>
+                        <div class="form-group">
+                            <label for="customerState">State *</label>
+                            <input type="text" id="customerState" name="address.state" required placeholder="CA" maxlength="2">
+                        </div>
+                        <div class="form-group">
+                            <label for="customerZipCode">ZIP Code *</label>
+                            <input type="text" id="customerZipCode" name="address.zipCode" required placeholder="94102">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Emergency Contact -->
+                <div class="form-section">
+                    <h3>Emergency Contact</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="emergencyName">Contact Name *</label>
+                            <input type="text" id="emergencyName" name="emergencyContact.name" required placeholder="John Wilson">
+                        </div>
+                        <div class="form-group">
+                            <label for="emergencyRelationship">Relationship *</label>
+                            <input type="text" id="emergencyRelationship" name="emergencyContact.relationship" required placeholder="Spouse">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="emergencyPhone">Contact Phone *</label>
+                        <input type="tel" id="emergencyPhone" name="emergencyContact.phone" required placeholder="(555) 123-4568">
+                    </div>
+                </div>
+
+                <!-- Membership Information -->
+                <div class="form-section">
+                    <h3>Membership Information</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="membershipType">Membership Type</label>
+                            <select id="membershipType" name="membershipType">
+                                <option value="Drop-in">Drop-in</option>
+                                <option value="Monthly">Monthly</option>
+                                <option value="Annual">Annual</option>
+                                <option value="Package">Package</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="paymentMethod">Payment Method</label>
+                            <select id="paymentMethod" name="paymentMethod">
+                                <option value="Cash">Cash</option>
+                                <option value="Credit Card">Credit Card</option>
+                                <option value="Debit Card">Debit Card</option>
+                                <option value="Check">Check</option>
+                                <option value="Bank Transfer">Bank Transfer</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="initialBalance">Initial Balance</label>
+                        <div class="input-group">
+                            <span class="input-prefix">$</span>
+                            <input type="number" id="initialBalance" name="initialBalance" min="0" step="0.01" value="0" placeholder="0.00">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Medical Information -->
+                <div class="form-section">
+                    <h3>Medical Information</h3>
+                    <div class="form-group">
+                        <label class="checkbox-item">
+                            <input type="checkbox" id="hasInjuries" name="hasInjuries">
+                            <span class="checkmark"></span>
+                            Has injuries or medical conditions
+                        </label>
+                    </div>
+                    <div class="form-group" id="injuriesGroup" style="display: none;">
+                        <label for="injuries">Injuries/Conditions (comma-separated)</label>
+                        <input type="text" id="injuries" name="injuries" placeholder="e.g., Back pain, Knee injury">
+                    </div>
+                    <div class="form-group">
+                        <label for="medications">Medications (comma-separated)</label>
+                        <input type="text" id="medications" name="medications" placeholder="e.g., Blood pressure medication">
+                    </div>
+                    <div class="form-group">
+                        <label for="allergies">Allergies (comma-separated)</label>
+                        <input type="text" id="allergies" name="allergies" placeholder="e.g., Latex, Nuts">
+                    </div>
+                </div>
+
+                <!-- Additional Notes -->
+                <div class="form-section">
+                    <h3>Additional Notes</h3>
+                    <div class="form-group">
+                        <label for="customerNotes">Notes</label>
+                        <textarea id="customerNotes" name="notes" rows="3" placeholder="Any additional information about the customer..."></textarea>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" id="cancelCustomerForm">Cancel</button>
+                    <button type="submit" class="btn btn-primary" id="submitCustomerForm">
+                        <i class="fas fa-save"></i> Save Customer
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Package Form Modal -->
+    <div class="modal" id="packageModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="packageModalTitle">Add New Package</h2>
+                <button class="modal-close" id="closePackageModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form id="packageForm" class="package-form">
+                <!-- Basic Information -->
+                <div class="form-section">
+                    <h3>Basic Information</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="packageName">Package Name *</label>
+                            <input type="text" id="packageName" name="name" required placeholder="e.g., General 4-Class">
+                        </div>
+                        <div class="form-group">
+                            <label for="packageType">Package Type *</label>
+                            <select id="packageType" name="type" required>
+                                <option value="Class Package">Class Package</option>
+                                <option value="Monthly Unlimited">Monthly Unlimited</option>
+                                <option value="Annual Membership">Annual Membership</option>
+                                <option value="Drop-in">Drop-in</option>
+                                <option value="Special Offer">Special Offer</option>
+                                <option value="Workshop">Workshop</option>
+                                <option value="Private Session">Private Session</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="packageDescription">Description</label>
+                        <textarea id="packageDescription" name="description" rows="3" placeholder="Describe the package benefits and features..."></textarea>
+                    </div>
+                </div>
+
+                <!-- Pricing Information -->
+                <div class="form-section">
+                    <h3>Pricing Information</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="numberOfClasses">Number of Classes *</label>
+                            <input type="number" id="numberOfClasses" name="numberOfClasses" required min="1" placeholder="1">
+                        </div>
+                        <div class="form-group">
+                            <label for="packagePrice">Price *</label>
+                            <div class="input-group">
+                                <span class="input-prefix">$</span>
+                                <input type="number" id="packagePrice" name="price" required min="0" step="0.01" placeholder="0.00">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="originalPrice">Original Price (for discounts)</label>
+                            <div class="input-group">
+                                <span class="input-prefix">$</span>
+                                <input type="number" id="originalPrice" name="originalPrice" min="0" step="0.01" placeholder="0.00">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="validityPeriod">Validity Period (days) *</label>
+                            <input type="number" id="validityPeriod" name="validityPeriod" required min="1" placeholder="30">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Package Features -->
+                <div class="form-section">
+                    <h3>Package Features</h3>
+                    <div class="form-group">
+                        <label for="applicableClasses">Applicable Classes</label>
+                        <select id="applicableClasses" name="applicableClasses" multiple>
+                            <option value="All Classes">All Classes</option>
+                            <option value="Beginner">Beginner</option>
+                            <option value="Intermediate">Intermediate</option>
+                            <option value="Advanced">Advanced</option>
+                            <option value="Restorative">Restorative</option>
+                            <option value="With Weights">With Weights</option>
+                            <option value="Prenatal">Prenatal</option>
+                            <option value="Yin">Yin</option>
+                            <option value="Chair">Chair</option>
+                            <option value="Hot Yoga">Hot Yoga</option>
+                            <option value="Power Yoga">Power Yoga</option>
+                            <option value="Ashtanga">Ashtanga</option>
+                            <option value="Vinyasa">Vinyasa</option>
+                            <option value="Hatha">Hatha</option>
+                        </select>
+                        <small>Hold Ctrl/Cmd to select multiple classes</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="packageBenefits">Benefits (one per line)</label>
+                        <textarea id="packageBenefits" name="benefits" rows="3" placeholder="Free mat rental&#10;Locker access&#10;Priority booking"></textarea>
+                    </div>
+                </div>
+
+                <!-- Restrictions -->
+                <div class="form-section">
+                    <h3>Restrictions</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="maxPerDay">Max Classes Per Day</label>
+                            <input type="number" id="maxPerDay" name="maxPerDay" min="1" placeholder="1">
+                        </div>
+                        <div class="form-group">
+                            <label for="timeRestrictions">Time Restrictions</label>
+                            <div class="form-row">
+                                <input type="time" id="startTime" name="startTime" placeholder="06:00">
+                                <input type="time" id="endTime" name="endTime" placeholder="22:00">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Package Settings -->
+                <div class="form-section">
+                    <h3>Package Settings</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="checkbox-item">
+                                <input type="checkbox" id="isPopular" name="isPopular">
+                                <span class="checkmark"></span>
+                                Popular Package
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label class="checkbox-item">
+                                <input type="checkbox" id="isFeatured" name="isFeatured">
+                                <span class="checkmark"></span>
+                                Featured Package
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="packageTerms">Terms & Conditions</label>
+                        <textarea id="packageTerms" name="terms" rows="3" placeholder="Package terms and conditions..."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="packageNotes">Notes</label>
+                        <textarea id="packageNotes" name="notes" rows="2" placeholder="Additional notes..."></textarea>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" id="cancelPackageForm">Cancel</button>
+                    <button type="submit" class="btn btn-primary" id="submitPackageForm">
+                        <i class="fas fa-save"></i> Save Package
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Sales Form Modal -->
+    <div class="modal" id="saleModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="saleModalTitle">Record New Sale</h2>
+                <button class="modal-close" id="closeSaleModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form id="saleForm" class="sale-form">
+                <!-- Customer Selection -->
+                <div class="form-section">
+                    <h3>Customer Information</h3>
+                    <div class="form-group">
+                        <label for="saleCustomer">Select Customer *</label>
+                        <select id="saleCustomer" name="customerId" required>
+                            <option value="">Choose a customer...</option>
+                        </select>
+                    </div>
+                    <div id="customerInfo" class="customer-info-display" style="display: none;">
+                        <div class="info-card">
+                            <h4>Customer Details</h4>
+                            <div id="customerDetails"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Package Selection -->
+                <div class="form-section">
+                    <h3>Package Information</h3>
+                    <div class="form-group">
+                        <label for="salePackage">Select Package *</label>
+                        <select id="salePackage" name="packageId" required>
+                            <option value="">Choose a package...</option>
+                        </select>
+                    </div>
+                    <div id="packageInfo" class="package-info-display" style="display: none;">
+                        <div class="info-card">
+                            <h4>Package Details</h4>
+                            <div id="packageDetails"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Payment Information -->
+                <div class="form-section">
+                    <h3>Payment Information</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="amountPaid">Amount Paid *</label>
+                            <div class="input-group">
+                                <span class="input-prefix">$</span>
+                                <input type="number" id="amountPaid" name="amountPaid" required min="0" step="0.01" placeholder="0.00">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="paymentMethod">Payment Method *</label>
+                            <select id="paymentMethod" name="paymentMethod" required>
+                                <option value="Cash">Cash</option>
+                                <option value="Credit Card">Credit Card</option>
+                                <option value="Debit Card">Debit Card</option>
+                                <option value="Check">Check</option>
+                                <option value="Bank Transfer">Bank Transfer</option>
+                                <option value="PayPal">PayPal</option>
+                                <option value="Venmo">Venmo</option>
+                                <option value="Zelle">Zelle</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="paymentDate">Payment Date *</label>
+                            <input type="datetime-local" id="paymentDate" name="paymentDate" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="transactionId">Transaction ID</label>
+                            <input type="text" id="transactionId" name="transactionId" placeholder="Optional transaction reference">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Validity Period -->
+                <div class="form-section">
+                    <h3>Validity Period</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="validityStartDate">Start Date *</label>
+                            <input type="date" id="validityStartDate" name="validityStartDate" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="validityEndDate">End Date</label>
+                            <input type="date" id="validityEndDate" name="validityEndDate" readonly>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="saleNotes">Notes</label>
+                        <textarea id="saleNotes" name="notes" rows="3" placeholder="Additional notes about this sale..."></textarea>
+                    </div>
+                </div>
+
+                <!-- Sale Summary -->
+                <div class="form-section">
+                    <h3>Sale Summary</h3>
+                    <div id="saleSummary" class="sale-summary">
+                        <div class="summary-item">
+                            <span class="label">Customer:</span>
+                            <span id="summaryCustomer">-</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="label">Package:</span>
+                            <span id="summaryPackage">-</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="label">Classes:</span>
+                            <span id="summaryClasses">-</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="label">Validity:</span>
+                            <span id="summaryValidity">-</span>
+                        </div>
+                        <div class="summary-item total">
+                            <span class="label">Total Amount:</span>
+                            <span id="summaryAmount">$0.00</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" id="cancelSaleForm">Cancel</button>
+                    <button type="submit" class="btn btn-primary" id="submitSaleForm">
+                        <i class="fas fa-save"></i> Record Sale
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Attendance Form Modal -->
+    <div class="modal" id="attendanceModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="attendanceModalTitle">Record Class Attendance</h2>
+                <button class="modal-close" id="closeAttendanceModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form id="attendanceForm" class="attendance-form">
+                <!-- Instructor Selection -->
+                <div class="form-section">
+                    <h3>Instructor Information</h3>
+                    <div class="form-group">
+                        <label for="attendanceInstructor">Select Instructor *</label>
+                        <select id="attendanceInstructor" name="instructorId" required>
+                            <option value="">Choose an instructor...</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Class Selection -->
+                <div class="form-section">
+                    <h3>Class Information</h3>
+                    <div class="form-group">
+                        <label for="attendanceClass">Select Class *</label>
+                        <select id="attendanceClass" name="classId" required>
+                            <option value="">Choose a class...</option>
+                        </select>
+                    </div>
+                    <div id="classInfo" class="class-info-display" style="display: none;">
+                        <div class="info-card">
+                            <h4>Class Details</h4>
+                            <div id="classDetails"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Date & Time -->
+                <div class="form-section">
+                    <h3>Attendance Date & Time</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="actualDate">Actual Date *</label>
+                            <input type="date" id="actualDate" name="actualDate" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="actualTime">Actual Time *</label>
+                            <input type="time" id="actualTime" name="actualTime" required>
+                        </div>
+                    </div>
+                    <div id="scheduleWarning" class="schedule-warning" style="display: none;">
+                        <div class="warning-card">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <div class="warning-content">
+                                <h4>Schedule Mismatch Warning</h4>
+                                <p id="warningMessage"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Customer Selection -->
+                <div class="form-section">
+                    <h3>Mark Attendance</h3>
+                    <div class="form-group">
+                        <label for="customerSearch">Search Customers</label>
+                        <input type="text" id="customerSearch" placeholder="Search customers by name...">
+                    </div>
+                    <div class="attendance-list" id="attendanceList">
+                        <!-- Customer checkboxes will be loaded here -->
+                    </div>
+                </div>
+
+                <!-- Attendance Summary -->
+                <div class="form-section">
+                    <h3>Attendance Summary</h3>
+                    <div id="attendanceSummary" class="attendance-summary">
+                        <div class="summary-item">
+                            <span class="label">Selected Class:</span>
+                            <span id="summaryClass">-</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="label">Date & Time:</span>
+                            <span id="summaryDateTime">-</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="label">Total Attendees:</span>
+                            <span id="summaryAttendees">0</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="label">Balance Warnings:</span>
+                            <span id="summaryWarnings">0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" id="cancelAttendanceForm">Cancel</button>
+                    <button type="submit" class="btn btn-primary" id="submitAttendanceForm">
+                        <i class="fas fa-save"></i> Save Attendance
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
