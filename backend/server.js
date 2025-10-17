@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const morgan = require('morgan');
 const path = require('path');
+const mongoose = require('mongoose');
 require('dotenv').config();
 
 const connectDB = require('./config/database');
@@ -17,8 +18,11 @@ const reportRoutes = require('./routes/reports');
 
 const app = express();
 
-// Connect to MongoDB
-connectDB();
+// Connect to MongoDB (non-blocking)
+connectDB().catch(err => {
+  console.error('Failed to connect to database:', err);
+  console.log('Server will continue without database connection');
+});
 
 // Middleware
 app.use(morgan('dev')); // Logging
@@ -46,7 +50,8 @@ app.get('/api/health', (req, res) => {
   res.json({
     success: true,
     message: 'YogiTrack API is running',
-    timestamp: new Date().toISOString()
+    timestamp: new Date().toISOString(),
+    database: mongoose.connection.readyState === 1 ? 'connected' : 'disconnected'
   });
 });
 

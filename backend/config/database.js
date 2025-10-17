@@ -14,7 +14,8 @@ const connectDB = async () => {
     console.log(`Database: ${conn.connection.name}`);
   } catch (error) {
     console.error('Database connection error:', error);
-    process.exit(1);
+    console.log('Continuing without database connection...');
+    // Don't exit the process - let the app run without database
   }
 };
 
